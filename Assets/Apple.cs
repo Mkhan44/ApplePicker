@@ -10,6 +10,12 @@ public class Apple : MonoBehaviour {
 	
 		if (transform.position.y < bottomY) {
 			Destroy ( this.gameObject);
+			//Reference ApplePicker comp of Main Camera
+			ApplePicker apScript = Camera.main.GetComponent<ApplePicker> ();
+			//Call the public APpleDestroyed() method of apScript
+			apScript.AppleDestroyed ();
 		}
+
+	
 	}
 }
